@@ -1,7 +1,7 @@
 package do
 
 import (
-	"float-ip-do-k8s/pkg/config"
+	"digitalocean-floating-ip-operator/pkg/config"
 	"github.com/digitalocean/godo"
 )
 

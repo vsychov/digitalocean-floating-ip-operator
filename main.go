@@ -1,10 +1,10 @@
 package main
 
 import (
-	"float-ip-do-k8s/pkg/config"
-	"float-ip-do-k8s/pkg/do"
-	"float-ip-do-k8s/pkg/k8s"
-	"float-ip-do-k8s/pkg/operator"
+	"digitalocean-floating-ip-operator/pkg/config"
+	"digitalocean-floating-ip-operator/pkg/do"
+	"digitalocean-floating-ip-operator/pkg/k8s"
+	"digitalocean-floating-ip-operator/pkg/operator"
 	"go.uber.org/fx"
 )
 
