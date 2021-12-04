@@ -4,5 +4,5 @@ saMountPath: "/var/run/secrets/kubernetes.io/operator-serviceaccount"
 doAccessToken: ""
 
 image:
-    name: ""
+    name: "quay.io/vsychov/digitalocean-floating-ip-operator"
     tag: "latest"
