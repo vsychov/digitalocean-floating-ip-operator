@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-env
+
+data:
+  APP_EGRESS_POOL_NAME: "{{ .Values.egressPoolName }}"
+  DIGITALOCEAN_ACCESS_TOKEN: "{{ .Values.doAccessToken }}"
+  NODES_WATCH_TIMEOUT: "1800"
+  ROUTING_JOB_NAMESPACE: "{{ .Release.Namespace }}"
+  ROUTING_SERVICE_ACCOUNT_NAME: "{{ .Release.Name }}"
+  APP_EGRESS_ALLOWED_IPS: "{{ join "," .Values.egressIps }}"
+  KUBERNTERS_ROOT_CA_FILE: "{{ .Values.saMountPath }}/ca.crt"
+  KUBERNTERS_TOKEN_FILE: "{{ .Values.saMountPath }}/token"

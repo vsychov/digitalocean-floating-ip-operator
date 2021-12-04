@@ -1,0 +1,6 @@
+apiVersion: v2
+name: do-float-ip-operator
+description: A Helm chart for do-float-ip-operator
+type: application
+version: 0.1.0
+appVersion: "0.1.0"

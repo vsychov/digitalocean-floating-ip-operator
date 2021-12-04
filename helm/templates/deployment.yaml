@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Release.Name}}
+
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app: {{.Release.Name}}
+  template:
+    metadata:
+      annotations:
+        checksum/env: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+      labels:
+        app: {{.Release.Name}}
+    spec:
+      volumes:
+      - name: sa-token
+        secret:
+          secretName: {{ .Release.Name }}-sa-token
+      containers:
+        - name: app
+          image: {{ .Values.image.name }}:{{ .Values.image.tag }}
+          volumeMounts:
+          - mountPath: {{ .Values.saMountPath }}
+            name: sa-token
+          envFrom:
+            - configMapRef:
+                name: {{ .Release.Name }}-env

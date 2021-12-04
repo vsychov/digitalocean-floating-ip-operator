@@ -1,0 +1,8 @@
+egressIps: []
+egressPoolName: ""
+saMountPath: "/var/run/secrets/kubernetes.io/operator-serviceaccount"
+doAccessToken: ""
+
+image:
+    name: ""
+    tag: "latest"
