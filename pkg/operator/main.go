@@ -15,6 +15,7 @@ type operator struct {
 	DoClient do.Client
 }
 
+// Handle is entrypoint for operator
 func Handle(config config.Config, doClient do.Client, k8s k8s.K8s) {
 	log.Println("Operator started")
 	log.Printf("Config: %+v\n", config)

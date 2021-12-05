@@ -3,7 +3,7 @@ package operator
 import (
 	"encoding/json"
 	"fmt"
-	k8s_bridge_do "github.com/vsychov/digitalocean-floating-ip-operator/pkg/k8s-bridge-do"
+	"github.com/vsychov/digitalocean-floating-ip-operator/pkg/bridge"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/watch"
 	"log"
@@ -21,7 +21,7 @@ func (op *operator) newOrModify(node v1.Node) (err error) {
 	//    - mark node as ready for egress ("egress-ready=true")
 	log.Printf("Node: %s (name: %s)", node.Spec.ProviderID, node.Name)
 
-	isHaveAllowedFloatIp, ip, err := k8s_bridge_do.IsNodeHaveAllowedFloatingIp(op.Config.AllowedEgressIps, &op.DoClient, &node)
+	isHaveAllowedFloatIp, ip, err := bridge.IsNodeHaveAllowedFloatingIp(op.Config.AllowedEgressIps, &op.DoClient, &node)
 	if err != nil {
 		log.Printf("Skip event, API error received: %s", err.Error())
 		return
@@ -44,7 +44,7 @@ func (op *operator) newOrModify(node v1.Node) (err error) {
 	for _, ip := range ips {
 		//ip not assigned to Droplet, assign it to current Droplet
 		if ip.Droplet == nil {
-			dropletId, err := k8s_bridge_do.GetDoDropletId(&node)
+			dropletId, err := bridge.GetDoDropletId(&node)
 			if err != nil {
 				return err
 			}

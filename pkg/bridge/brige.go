@@ -1,4 +1,4 @@
-package k8s_bridge_do
+package bridge
 
 import (
 	"context"
