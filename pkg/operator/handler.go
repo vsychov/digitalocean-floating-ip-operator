@@ -115,6 +115,10 @@ func (op *operator) removeNode(node v1.Node) {
 
 func (op *operator) unmarshalNode(obj interface{}) (node v1.Node, err error) {
 	b, err := json.Marshal(obj)
+	if err != nil {
+		return
+	}
+
 	err = json.Unmarshal(b, &node)
 	return
 }
