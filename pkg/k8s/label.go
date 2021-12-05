@@ -16,7 +16,7 @@ type patchStringValue struct {
 	Value string `json:"value"`
 }
 
-//set label "egress-ready" = false or true
+// SetEgressReadyLabel set label "egress-ready" = false or true
 func (k8s K8s) SetEgressReadyLabel(node *v1.Node, ready bool) {
 	payload := []patchStringValue{{
 		Op:    "replace",

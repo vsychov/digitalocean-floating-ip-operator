@@ -11,11 +11,13 @@ import (
 	"os"
 )
 
+// K8s client wrapper
 type K8s struct {
 	ClientSet *kubernetes.Clientset
 	Config    config.Config
 }
 
+// NewInstance create new instance of K8s
 func NewInstance(applicationConfig config.Config) (instance K8s, err error) {
 	clientset, err := newClientset()
 	if err != nil {

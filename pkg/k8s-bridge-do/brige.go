@@ -9,6 +9,7 @@ import (
 	"strings"
 )
 
+// GetDoDropletId return DO specific droplet ID
 func GetDoDropletId(node *v1.Node) (doDropletId int, err error) {
 	doDropletId, err = strconv.Atoi(strings.Replace(node.Spec.ProviderID, "digitalocean://", "", 1))
 	if err != nil {
@@ -18,6 +19,7 @@ func GetDoDropletId(node *v1.Node) (doDropletId int, err error) {
 	return
 }
 
+// IsNodeHaveAllowedFloatingIp check that specific node have assigned float ip
 func IsNodeHaveAllowedFloatingIp(trackedIps map[string]bool, doClient *do.Client, node *v1.Node) (result bool, ip godo.FloatingIP, err error) {
 	doDropletId, err := GetDoDropletId(node)
 	result = false

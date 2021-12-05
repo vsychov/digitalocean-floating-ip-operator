@@ -10,6 +10,7 @@ import (
 	"time"
 )
 
+// AddRouteForFloatIp execute job to create routing rules on node
 func (k8s *K8s) AddRouteForFloatIp(node *v1.Node, ip string) {
 	//TODO: add watch and alert for failed job (float-ip-*)
 	jobName := fmt.Sprintf("float-ip-%s", node.Name) //job name should unique for node, for prevent RC

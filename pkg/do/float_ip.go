@@ -35,6 +35,7 @@ func (client *Client) GetAvailableEgressIps(trackedIps map[string]bool) (doIps [
 	return
 }
 
+// AssignFloatIpToDroplet assign float ip to droplet
 func (client *Client) AssignFloatIpToDroplet(doDropletId int, ip string) (err error) {
 	action, _, err := client.DoClient.FloatingIPActions.Assign(context.TODO(), ip, doDropletId)
 	if err != nil {
