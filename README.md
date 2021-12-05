@@ -1,6 +1,9 @@
 # :warning: WARNING
 This is in beta test, not tested in production, and can cause any issues.
 
+[![codecov](https://codecov.io/gh/vsychov/digitalocean-floating-ip-operator/branch/master/graph/badge.svg?token=7V853A3LYA)](https://codecov.io/gh/vsychov/digitalocean-floating-ip-operator)
+---
+
 # What is it?
 This is K8S operator, that may be used for DigitalOcean managed Kubernetes, for provide static IP for nodes, it's using [floating IP](https://docs.digitalocean.com/products/networking/floating-ips/) for that.
 
