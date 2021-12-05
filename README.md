@@ -1,7 +1,9 @@
 # :warning: WARNING
 This is in beta test, not tested in production, and can cause any issues.
 
+[![Build Status](https://github.com/vsychov/digitalocean-floating-ip-operator/actions/workflows/codecov-io.yml/badge.svg)](https://github.com/vsychov/digitalocean-floating-ip-operator/actions)
 [![codecov](https://codecov.io/gh/vsychov/digitalocean-floating-ip-operator/branch/master/graph/badge.svg?token=7V853A3LYA)](https://codecov.io/gh/vsychov/digitalocean-floating-ip-operator)
+[![Go Reference](https://pkg.go.dev/badge/github.com/vsychov/digitalocean-floating-ip-operator.svg)](https://pkg.go.dev/github.com/vsychov/digitalocean-floating-ip-operator)
 ---
 
 # What is it?
