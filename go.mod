@@ -1,4 +1,4 @@
-module digitalocean-floating-ip-operator
+module github.com/vsychov/digitalocean-floating-ip-operator
 
 go 1.17
 

@@ -1,7 +1,7 @@
 package k8s
 
 import (
-	"digitalocean-floating-ip-operator/pkg/config"
+	"github.com/vsychov/digitalocean-floating-ip-operator/pkg/config"
 	"io/ioutil"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"

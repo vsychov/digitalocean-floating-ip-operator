@@ -1,8 +1,8 @@
 package do
 
 import (
-	"digitalocean-floating-ip-operator/pkg/config"
 	"github.com/digitalocean/godo"
+	"github.com/vsychov/digitalocean-floating-ip-operator/pkg/config"
 )
 
 type Client struct {

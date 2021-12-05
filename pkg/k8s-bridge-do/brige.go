@@ -2,8 +2,8 @@ package k8s_bridge_do
 
 import (
 	"context"
-	"digitalocean-floating-ip-operator/pkg/do"
 	"github.com/digitalocean/godo"
+	"github.com/vsychov/digitalocean-floating-ip-operator/pkg/do"
 	v1 "k8s.io/api/core/v1"
 	"strconv"
 	"strings"

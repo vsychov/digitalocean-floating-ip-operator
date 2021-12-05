@@ -1,9 +1,9 @@
 package operator
 
 import (
-	k8s_bridge_do "digitalocean-floating-ip-operator/pkg/k8s-bridge-do"
 	"encoding/json"
 	"fmt"
+	k8s_bridge_do "github.com/vsychov/digitalocean-floating-ip-operator/pkg/k8s-bridge-do"
 	v1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/watch"
 	"log"

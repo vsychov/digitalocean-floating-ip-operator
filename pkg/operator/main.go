@@ -2,9 +2,9 @@ package operator
 
 import (
 	"context"
-	"digitalocean-floating-ip-operator/pkg/config"
-	"digitalocean-floating-ip-operator/pkg/do"
-	"digitalocean-floating-ip-operator/pkg/k8s"
+	"github.com/vsychov/digitalocean-floating-ip-operator/pkg/config"
+	"github.com/vsychov/digitalocean-floating-ip-operator/pkg/do"
+	"github.com/vsychov/digitalocean-floating-ip-operator/pkg/k8s"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"log"
 )
