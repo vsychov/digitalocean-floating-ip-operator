@@ -5,6 +5,7 @@ This is in beta test, not tested in production, and can cause any issues.
 [![codecov](https://codecov.io/gh/vsychov/digitalocean-floating-ip-operator/branch/master/graph/badge.svg?token=7V853A3LYA)](https://codecov.io/gh/vsychov/digitalocean-floating-ip-operator)
 [![Go Reference](https://pkg.go.dev/badge/github.com/vsychov/digitalocean-floating-ip-operator.svg)](https://pkg.go.dev/github.com/vsychov/digitalocean-floating-ip-operator)
 [![Go Report Card](https://goreportcard.com/badge/github.com/vsychov/digitalocean-floating-ip-operator)](https://goreportcard.com/report/github.com/vsychov/digitalocean-floating-ip-operator)
+[![Docker Repository on Quay](https://quay.io/repository/vsychov/digitalocean-floating-ip-operator/status "Docker Repository on Quay")](https://quay.io/repository/vsychov/digitalocean-floating-ip-operator)
 ---
 
 # What is it?
