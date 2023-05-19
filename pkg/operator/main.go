@@ -33,18 +33,18 @@ func Handle(config config.Config, doClient do.Client, k8s k8s.K8s) {
 	}
 
 	if err != nil {
-		panic(err.Error())
+		log.Fatalf("Service will be stoped. Unable subscribe to events: %s", err.Error())
 	}
 
 	for {
 		event, ok := <-watchNodesInterface.ResultChan()
 		err := op.handleNodeEvent(event)
 		if err != nil {
-			panic(err)
+			log.Fatalf("Unable handle event, service stoped. Error: %s", err)
 		}
 
 		if !ok {
-			panic("timeout, exiting")
+			log.Fatalf("timeout, exiting")
 		}
 	}
 }
