@@ -2,7 +2,6 @@ package k8s
 
 import (
 	"github.com/vsychov/digitalocean-floating-ip-operator/pkg/config"
-	"io/ioutil"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/rest"
 	certutil "k8s.io/client-go/util/cert"
@@ -67,7 +66,7 @@ func inClusterCustomConfig() (*rest.Config, error) {
 		return nil, rest.ErrNotInCluster
 	}
 
-	token, err := ioutil.ReadFile(tokenFile)
+	token, err := os.ReadFile(tokenFile)
 	if err != nil {
 		return nil, err
 	}
