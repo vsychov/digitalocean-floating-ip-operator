@@ -6,8 +6,10 @@ import (
 	"k8s.io/client-go/rest"
 	certutil "k8s.io/client-go/util/cert"
 	"k8s.io/klog/v2"
+	"log"
 	"net"
 	"os"
+	"strings"
 )
 
 // K8s client wrapper
@@ -85,4 +87,18 @@ func inClusterCustomConfig() (*rest.Config, error) {
 		BearerToken:     string(token),
 		BearerTokenFile: tokenFile,
 	}, nil
+}
+
+func (k8s *K8s) getK8sServerVersion() string {
+
+	serverVersion, err := k8s.ClientSet.ServerVersion()
+	if err != nil {
+		log.Fatalf("Unable to get k8s server version: %s", err)
+	}
+
+	//for values like v1.26.3-gke.1000
+	versions := strings.Split(serverVersion.String(), "-")
+	version := strings.Replace(versions[0], "v", "", 1)
+
+	return version
 }

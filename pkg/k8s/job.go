@@ -10,12 +10,13 @@ import (
 	"time"
 )
 
+const fieldManager = "do-floating-ip-operator"
+
 // AddRouteForFloatIp execute job to create routing rules on node
 func (k8s *K8s) AddRouteForFloatIp(node *v1.Node, ip string) {
 	//TODO: add watch and alert for failed job (float-ip-*)
 	jobName := fmt.Sprintf("float-ip-%s", node.Name) //job name should unique for node, for prevent RC
 	jobNamespace := string(k8s.Config.RoutingJob.Namespace)
-	fieldManager := "do-floating-ip-operator" //TODO: move globably?
 	saName := string(k8s.Config.RoutingJob.ServiceAccountName)
 
 	existingJobs, err := k8s.ClientSet.BatchV1().Jobs(jobNamespace).List(context.TODO(), metav1.ListOptions{
@@ -67,7 +68,7 @@ func (k8s *K8s) AddRouteForFloatIp(node *v1.Node, ip string) {
 							ImagePullPolicy: v1.PullAlways,
 							SecurityContext: &jobSecurityContext,
 							Name:            jobName,
-							Image:           "alpine/k8s:1.21.2",
+							Image:           "alpine/k8s:" + k8s.getK8sServerVersion(),
 							//ip route replace default via 10.19.0.1 dev eth0
 							Command: []string{
 								"/bin/sh",
