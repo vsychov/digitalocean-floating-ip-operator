@@ -46,7 +46,7 @@ export KUBERNETES_SERVICE_PORT=8080
 ```
 
 3. add token's & cert:
-   or set KUBERNTERS_ROOT_CA_FILE & KUBERNTERS_TOKEN_FILE env
+   or set KUBERNETES_ROOT_CA_FILE & KUBERNETES_TOKEN_FILE env
 
 ```
 sudo mkdir -p /var/run/secrets/kubernetes.io/serviceaccount/

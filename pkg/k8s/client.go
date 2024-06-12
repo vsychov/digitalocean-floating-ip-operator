@@ -53,12 +53,12 @@ func newClientset() (client *kubernetes.Clientset, err error) {
 // copy-paste from pkg/mod/k8s.io/client-go@v0.21.3/rest/config.go
 // add way to override tokenFile & rootCAFile path
 func inClusterCustomConfig() (*rest.Config, error) {
-	tokenFile, ok := os.LookupEnv("KUBERNTERS_TOKEN_FILE")
+	tokenFile, ok := os.LookupEnv("KUBERNETES_TOKEN_FILE")
 	if !ok {
 		tokenFile = "/var/run/secrets/kubernetes.io/serviceaccount/token"
 	}
 
-	rootCAFile, ok := os.LookupEnv("KUBERNTERS_ROOT_CA_FILE")
+	rootCAFile, ok := os.LookupEnv("KUBERNETES_ROOT_CA_FILE")
 	if !ok {
 		rootCAFile = "/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
 	}
