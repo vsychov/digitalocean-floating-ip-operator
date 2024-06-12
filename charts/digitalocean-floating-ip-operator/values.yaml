@@ -5,4 +5,4 @@ doAccessToken: ""
 
 image:
     name: "quay.io/vsychov/digitalocean-floating-ip-operator"
-    tag: "latest"
+    tag: "v0.1.9"
