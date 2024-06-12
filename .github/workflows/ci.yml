@@ -24,7 +24,7 @@ jobs:
           fetch-depth: 2
       - uses: actions/setup-go@v2
         with:
-          go-version: '1.20'
+          go-version: '1.22'
       - name: Run coverage
         run: go test ./pkg/... -race -coverprofile=coverage.txt -covermode=atomic
       - name: Upload coverage to Codecov
