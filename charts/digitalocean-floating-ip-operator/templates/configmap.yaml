@@ -10,5 +10,5 @@ data:
   ROUTING_JOB_NAMESPACE: "{{ .Release.Namespace }}"
   ROUTING_SERVICE_ACCOUNT_NAME: "{{ .Release.Name }}"
   APP_EGRESS_ALLOWED_IPS: "{{ join "," .Values.egressIps }}"
-  KUBERNTERS_ROOT_CA_FILE: "{{ .Values.saMountPath }}/ca.crt"
-  KUBERNTERS_TOKEN_FILE: "{{ .Values.saMountPath }}/token"
+  KUBERNETES_ROOT_CA_FILE: "{{ .Values.saMountPath }}/ca.crt"
+  KUBERNETES_TOKEN_FILE: "{{ .Values.saMountPath }}/token"
