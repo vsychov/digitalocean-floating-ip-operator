@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   digitalocean-floating-ip-operator:
   - apiVersion: v2
+    appVersion: 0.1.10
+    created: "2024-06-14T10:40:59.90001464Z"
+    description: A Helm chart for do-float-ip-operator
+    digest: 8728b77404a1dc51e787e7ca85aa8f4fe0a472e0adf97cfe65509a0f05c309f3
+    name: digitalocean-floating-ip-operator
+    type: application
+    urls:
+    - https://github.com/vsychov/digitalocean-floating-ip-operator/releases/download/digitalocean-floating-ip-operator-0.1.10/digitalocean-floating-ip-operator-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
     appVersion: 0.1.9
     created: "2024-06-12T13:49:31.890276661Z"
     description: A Helm chart for do-float-ip-operator
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/vsychov/digitalocean-floating-ip-operator/releases/download/digitalocean-floating-ip-operator-0.1.0/digitalocean-floating-ip-operator-0.1.0.tgz
     version: 0.1.0
-generated: "2024-06-12T13:49:31.890291258Z"
+generated: "2024-06-14T10:40:59.900027484Z"
