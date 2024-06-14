@@ -68,6 +68,7 @@ func inClusterCustomConfig() (*rest.Config, error) {
 		return nil, rest.ErrNotInCluster
 	}
 
+	log.Println("Kubernetes host and port is: ", host, port)
 	token, err := os.ReadFile(tokenFile)
 	if err != nil {
 		return nil, err
