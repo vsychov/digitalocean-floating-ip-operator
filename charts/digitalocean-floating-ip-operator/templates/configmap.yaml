@@ -12,3 +12,4 @@ data:
   APP_EGRESS_ALLOWED_IPS: "{{ join "," .Values.egressIps }}"
   KUBERNETES_ROOT_CA_FILE: "{{ .Values.saMountPath }}/ca.crt"
   KUBERNETES_TOKEN_FILE: "{{ .Values.saMountPath }}/token"
+  ROUTING_JOB_IMAGE_NAME: "{{ .Values.jobImageName }}"

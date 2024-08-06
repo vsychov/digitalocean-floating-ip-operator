@@ -2,6 +2,7 @@ egressIps: []
 egressPoolName: ""
 saMountPath: "/var/run/secrets/kubernetes.io/operator-serviceaccount"
 doAccessToken: ""
+jobImageName: "alpine/k8s"
 
 image:
     name: "quay.io/vsychov/digitalocean-floating-ip-operator"
