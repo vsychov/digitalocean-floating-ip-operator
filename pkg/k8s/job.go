@@ -67,7 +67,7 @@ func (k8s *K8s) AddRouteForFloatIp(node *v1.Node, ip string) {
 							ImagePullPolicy: v1.PullAlways,
 							SecurityContext: &jobSecurityContext,
 							Name:            jobName,
-							Image:           "alpine/k8s:" + k8s.getK8sServerVersion(),
+							Image:           string(k8s.Config.RoutingJob.ImageName) + ":" + k8s.getK8sServerVersion(),
 							//ip route replace default via 10.19.0.1 dev eth0
 							Command: []string{
 								"/bin/sh",

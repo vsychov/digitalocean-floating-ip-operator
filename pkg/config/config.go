@@ -15,6 +15,7 @@ type Config struct {
 
 type routingJobConfig struct {
 	Namespace          nonEmptyStringDecoder `envconfig:"ROUTING_JOB_NAMESPACE"`
+	ImageName          nonEmptyStringDecoder `envconfig:"ROUTING_JOB_IMAGE_NAME" default:"alpine/k8s"`
 	ServiceAccountName nonEmptyStringDecoder `envconfig:"ROUTING_SERVICE_ACCOUNT_NAME"`
 }
 
